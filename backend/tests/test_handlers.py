@@ -58,7 +58,7 @@ def test_get_7day_forecast(mock_weather_response):
 
         # Check that temperatures are properly averaged
         for _, row in result.iterrows():
-            assert isinstance(row["date"], date)
+            assert isinstance(row["date"], datetime)
             assert isinstance(row["mean_temp"], float)
             # Mean temp should be between min and max of the day
             assert 15 <= row["mean_temp"] <= 25  # Based on our mock data
